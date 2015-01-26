@@ -1,0 +1,524 @@
+/*resetting default settings --> cross-browser simular*/
+
+body, h1, h2, h3, h4, h5, h6, p, div, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    background-color: #999;
+}
+
+#divContainer{
+    width: 800px;
+    /*links, rechts, zijkanten, 20px automatisch padding*/
+    margin: 20px auto;
+}
+
+#divHeader{
+    width: 800px;
+    background: url(.../images/header.jpg); 
+    text-align: center;
+}
+
+#divHeader h1{
+    /*vulling top and bottom*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+#divLine {
+    /*Voegt een dunnen lijn onder de header*/
+    width: 800px;
+    background-color: #999;
+    height: 1px;
+}
+
+#divLinks {
+    /*de balk onder de header*/
+    width: 800px;
+    background-color: #666;
+}
+
+#divNav {
+    /*de breedte van de anchor tag is 80 (80*4=320) + (7px margin left&richt) --> (14*4=56) + links rechts 1 px border (4*2=8)*/
+    /*----> 320 + 56 + 8 = 384!!! */ /*1px vermeerderen brengt de hele orde naar de klote*/
+    width: 384px;
+    background: #666;
+    height: 36px;
+    /*links, rechts, top, bottom --> 0 padding*/
+    margin: 0 auto;
+}
+
+    #divNav ul {
+        /*bolletjes voor de list items verwijderen*/
+        list-style-type: none;
+    }
+
+        #divNav ul li {
+            /*plaatst de list items naast elkaar, vanaf links beginnend*/
+            float: left;
+        }
+
+            #divNav ul li a {
+                /*by default zijn het inline elements --> block van maken zodat we ze als div's kunnen behandelen*/
+                display: block;
+                height: 20px;
+                /*even groot stellen als de heigt van de container*/
+                line-height: 20px;
+                /*zwarte achtergrond*/
+                background-color: #000;
+                /*breedte van de anchor tags*/
+                width: 80px;
+                font-size: 0.80em;
+                font-weight: bold;
+                /*witte tekst*/
+                color: #FFF;
+                /*centreert teks in het block*/
+                text-align: center;
+                /*lijntje onder link weg*/
+                text-decoration: none;
+                /*7px top, bottom, left, right*/
+                margin: 7px;
+                /*border radius*/
+                /*Maakt de vierkante boxen rond*/
+                border-radius: 5px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                /*dun zwarte lijn rond de anchor block*/
+                border: 1px solid #000;
+                /*gradients*/
+                /*beginnen met kleur #666 vanaf de top, kleur #333 vanonder in gebruiken*/
+                background: -moz-linear-gradient(top, #666, #333);
+                background: -webkit-gradient(linear, left top, left bottom, (from#666), to (#333));
+            }
+
+                #divNav ul li a:hover {
+                    /*background wordt zwart als je erover hovert*/
+                    background-color: #333;
+                    background: -moz-linear-gradient(top, #000, #666);
+                    background: -webkit-gradient(linear, left top, left bottom, (from#000), to (#666));
+                }
+
+#divContent_area {
+    width: 800px;
+    background-color: #333;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#divData {
+    /*breedte divData*/
+    width: 430px;
+    margin: 0 auto;
+    background: #222;
+    border: 1px solid #000;
+    /*Gradients*/
+    background: -moz-linear-gradient(top, #666, #333, #222);
+    /*in het midden (0.5) is er een kleur #333*/
+    background: -webkit-gradient(linear, left top, left bottom, (from#666), to (#222), color-stop(0.5, #333));
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    /*Shadows*/
+    /*1e= x-offset 2e=yoffset 3e= blurradius en kleur van de blur*/
+    /*hoe lager het blurgetal, hoe scherper de schaduw zal zijn*/
+    box-shadow: 10px 10px 4px #000;
+    -moz-box-shadow: 10px 10px 4px #000;
+    -webkit-box-shadow: 10px 10px 4px #000;
+}
+
+/*in divContent, vind een element img*/
+#divContent_area img {
+    /*tekst nu naast image, en image linksvanboven in div*/
+    float: left;
+    border: 1px solid #000;
+    background: #333;
+    /*16px links, rechts, boven onder, met een achtergrond van #333*/
+    padding: 6px;
+    /*rondom 16px padding (de kader) nog eens 0.7em langs elke kant*/
+    margin-top: 0;
+    margin-left: 30px;
+    /*gradient == afronden*/
+    background: -moz-linear-gradient(top, #000, #333);
+    background: -webkit-gradient(linear, left top, left bottom, (from#000), to (#333));
+    /*border radius*/
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+#divData h5 {
+    color: #FFF;
+    padding-top: 0.7em;
+    padding-right: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left:0.3em;
+    font-size: 1.3em;
+}
+
+#divData p {
+    font-size: 0.7em;
+    color: #999;
+    padding-top: 0em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    padding-bottom: 0.7em;
+    line-height: 1.4em;
+    text-align: justify;
+    font-weight: bold;
+}
+
+#divInteractie {
+    /*breedte divData*/
+    height: auto;
+    width: 143px;
+    float: right;
+    border: 1px solid #555;
+    background: #666;
+    /*16px links, rechts, boven onder, met een achtergrond van #333*/
+    padding: 6px;
+    /*rondom 16px padding (de kader) nog eens 0.7em langs elke kant*/
+    margin-top: 0;
+    margin-right: 10px;
+    /*gradient == afronden*/
+    background: -moz-linear-gradient(top, #666, #999);
+    background: -webkit-gradient(linear, left top, left bottom, (from#b4aeae), to (#999));
+    /*border radius*/
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+
+     box-shadow: 2px 2px 1px #555;
+    -moz-box-shadow: 2px 2px 1px #555;
+    -webkit-box-shadow: 2px 2px 1px #555;
+}
+
+#divInteractie p{
+    color: #fff;
+    font-size: 12px;
+}
+
+#divInteractie a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#divInteractie p, .personen, .categorie{
+    color: #ff6a00;
+    font-weight: bold;
+    line-height: 20px;
+    
+}
+
+#divScheiding{
+    padding-bottom: 15px;
+}
+
+#divData .benodigdheden{
+    color: #ff6a00;
+    font-size: 12px;
+}
+
+#divData .items{
+    color: #fff;
+}
+
+#divCounter{
+    /*breedte divData*/
+    height: 45px;
+    width: 45px;
+    float: right;
+    border: 3px solid #333;
+    background: #549dc6;
+    
+    /*16px links, rechts, boven onder, met een achtergrond van #333*/
+    padding: 6px;
+    /*rondom 16px padding (de kader) nog eens 0.7em langs elke kant*/
+    margin-top: 6px;
+    margin-right: 26px;
+    /*gradient == afronden*/
+    background: -moz-linear-gradient(top, #b4aeae, #999);
+    background: -webkit-gradient(linear, left top, left bottom, (from#b4aeae), to (#999));
+    /*border radius*/
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    
+    box-shadow: 4px 4px 2px #333;
+    -moz-box-shadow: 4px 4px 2px #333;
+    -webkit-box-shadow: 4px 4px 2px #333;
+}
+
+#divCounter p{
+    color: #ffffff;
+    font-weight: bold;
+    text-align:center;
+    line-height: 43px;
+    font-size: 30px;
+    
+}
+#divMin{
+        /*breedte divData*/
+    height: 30px;
+    width: 30px;
+    float: left;
+    border: 2px solid #fff;
+    background: #ac5eb7;
+    /*rondom 16px padding (de kader) nog eens 0.7em langs elke kant*/
+    padding: 6px;
+    margin-left: -65px;
+    margin-top: 160px;
+   
+    background: -moz-linear-gradient(top, #000, #333);
+    background: -webkit-gradient(linear, left top, left bottom, (from#000), to (#333));
+    /*border radius*/
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    text-align: center;
+}
+
+#divPlus{
+ /*breedte divData*/
+    height: 30px;
+    width: 30px;
+    float: left;
+    border: 2px solid #fff;
+    background: #666;
+    /*16px links, rechts, boven onder, met een achtergrond van #333*/
+    padding: 6px;
+    /*rondom 16px padding (de kader) nog eens 0.7em langs elke kant*/
+    margin-top: 9px;
+    margin-left: -115px;
+    margin-top: 160px;
+
+    background: -moz-linear-gradient(top, #000, #333);
+    background: -webkit-gradient(linear, left top, left bottom, (from#000), to (#333));
+    /*border radius*/
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+
+
+#divMin a{
+    text-decoration:none;
+    line-height: 25px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0px;
+    margin-left: -2px;
+}
+
+#divPlus a{
+    text-decoration:none;
+    color: #fff;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 40px;
+    display:inline-block;
+    margin: 0px;
+    margin-left: 4px;
+    text-align:center;
+}
+#divFooter{
+    background: #222;
+    height: 10px;
+    width: 800px;
+    border-bottom: 1px solid #333;
+}
+
+
+/*
+
+
+CSS VOOR WEERGAVE SPELLETJES
+
+default waarden resetten
+body, h1, h2, h3, h4, h5, h6, p, div, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+body{background:#999; margin:0px;}
+margin auto zet container in het midden
+#container {
+    width: 600px;
+    margin: 0 auto;
+    background: #b0c4de;
+}
+
+
+#header{
+    width: 100%;
+    height: 90px;
+    border-bottom: 5px solid #b0c4de;
+    border-top: 5px solid #b0c4de;
+    background: #666666;
+}
+#logo {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background: #ccc;
+}
+#titel{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    color:rgba(255,255,255,0.8);
+    font-family:serif;
+    font-size:44px;
+    font-weight:bold;
+    text-align:center;
+}
+
+#top_info{
+    float: right;
+    width: 100px;
+    height: 40px;
+    background: #666;
+    border: 1px solid #c7c7c7;
+    margin: 10px;
+}
+
+#navbar{
+    height: 20px;
+    clear: both;
+
+    
+}
+
+#navbar ul{margin: 0; padding: 0; list-style-type: none;}
+#navbar ul li {padding: 10px; float: left;}
+#navbar ul li a{font-size: 12px; float: left; display: block; padding: 0 0 0 20px; display: block;}
+#image a img{
+    float: left;
+    margin-right: 30px;
+    width: 200px;
+    border-bottom: 5px solid #b0c4de;
+    border-top: 5px solid #b0c4de;
+}
+
+
+.preview {
+    float: right;
+    width: 370px;
+    background: cadetblue;
+    border-bottom: 5px solid #b0c4de;
+    border-top: 5px solid #b0c4de;
+}
+
+h2{
+    font-size: 39px;
+    line-height: 43px;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+}
+
+a{
+    color: #276056;
+    font-size: 14px;
+}
+
+a:hover{
+    color:black;
+}
+
+article h2{
+    margin-top: 0;
+}
+
+.meta{
+    padding-left: 0;
+    margin: 0 0 8px;
+}
+
+.meta a, .post_comments a{
+    font-style:italic;
+    font-size: 14px;
+}
+
+.meta li:after{
+    content: '\\';
+    padding: 0 2px;
+    color: #999;
+}
+
+.meta li:last-child:after
+{
+    content: none;
+}
+
+.meta li{
+    display: inline;
+}
+
+p{
+    line-height: 21px;
+    text-align: justify;
+}
+
+body {
+    width: 600px;
+    margin: 20px auto;
+    font-family: sans-serif;
+    background: #b0c4de;
+}
+
+
+
+
+nav ul li{
+    float: left;
+    padding: 0px 30px;
+    list-style-type: none;
+    border-bottom: solid 1px #276056;
+}
+
+
+
+.continue{
+    float: right;
+}
+
+a{
+    color: #276056;
+    font-size: 14px;
+}
+
+
+.preview {
+    float: right;
+    width: 370px;
+}
+
+.post_comments{
+    background-color: #f3f3f3;
+    color: #999;
+    padding: 3px;
+    float: left;
+    font-size: 14px;
+}
+
+.post_comments a{
+    color: #999;
+    text-decoration: none;
+}
+
+.buttons_body{
+    margin-right: auto;
+    color: #276056;
+}
+
+.body{
+    clear: both;    
+    color: #575757;
+}*/
